@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Earn Mini App</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Noto Sans Bengali", sans-serif;
+        background: #e3f2ff;
+        text-align: center;
+    }
+    .header {
+        background: #007bff;
+        padding: 15px;
+        color: white;
+        font-size: 22px;
+        font-weight: bold;
+    }
+    .container {
+        padding: 20px;
+    }
+    .balance-box {
+        background: white;
+        padding: 18px;
+        border-radius: 12px;
+        box-shadow: 0 0 5px #9acbff;
+        margin-bottom: 15px;
+        font-size: 18px;
+    }
+
+    .btn {
+        width: 100%;
+        background: #007bff;
+        color: white;
+        padding: 15px;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        border-radius: 10px;
+        margin-top: 12px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background: #005fcc;
+        transition: 0.2s;
+    }
+
+</style>
+</head>
+<body>
+
+<div class="header">💰 Earn Mini App</div>
+
+<div class="container">
+
+    <div class="balance-box">
+        ইউজারনেম: <b id="username">Guest</b> <br>
+        মোট ব্যালেন্স: <b id="balance">0</b> টাকা
+    </div>
+
+    <button class="btn" onclick="watchAds()">📺 বিজ্ঞাপন দেখুন (৫৳)</button>
+    <button class="btn" onclick="joinTelegram()">📢 টেলিগ্রাম চ্যানেল জয়েন (২০৳)</button>
+    <button class="btn" onclick="joinYouTube()">▶️ ইউটিউব চ্যানেল জয়েন (৩০৳)</button>
+    <button class="btn" onclick="refer()">👥 রেফার করুন (৪০৳)</button>
+    <button class="btn" onclick="withdraw()">💳 টাকা উত্তোলন</button>
+
+</div>
+
+<script>
+    let balance = 0;
+
+    function updateBalance(){
+        document.getElementById("balance").innerText = balance;
+    }
+    function watchAds(){
+        balance += 5;
+        alert("সফলভাবে বিজ্ঞাপন দেখা হয়েছে! +৫ টাকা যোগ হলো");
+        updateBalance();
+    }
+    function joinTelegram(){
+        balance += 20;
+        alert("টেলিগ্রামে জয়েন সফল! +২০ টাকা যোগ হলো");
+        updateBalance();
+    }
+    function joinYouTube(){
+        balance += 30;
+        alert("ইউটিউব চ্যানেল জয়েন সফল! +৩০ টাকা যোগ হলো");
+        updateBalance();
+    }
+    function refer(){
+        balance += 40;
+        alert("রেফার সফল! +৪০ টাকা যোগ হলো");
+        updateBalance();
+    }
+    function withdraw(){
+        if(balance >= 500){
+            alert("উত্তোলনের আবেদন সফল! ২৪ ঘণ্টার মধ্যে পেমেন্ট পাবেন!");
+        } else {
+            alert("ন্যূনতম ৫০০ টাকা প্রয়োজন!");
+        }
+    }
+</script>
+
+</body>
+</html>
